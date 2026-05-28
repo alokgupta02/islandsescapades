@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Islands Escapades — Discover the Untouched Paradise of the Andaman Islands</title>
+<meta name="description" content="Islands Escapades — your trusted travel partner for bespoke Andaman & Nicobar Islands holidays. Locally rooted in Port Blair. Honeymoons, family adventures, diving expeditions and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<link rel="icon" type="image/png" href="brand_assets/ai.png">
+</head>
+<body>
+
+<!-- ========= NAV ========= -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Islands Escapades — home">
+      <img src="brand_assets/ai.png" alt="Islands Escapades logo" />
+      <span class="brand-name">Islands <span class="accent">Escapades</span></span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="is-active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's Connect</a></li>
+      </ul>
+    </nav>
+    <button class="nav-burger" aria-label="Open menu" onclick="document.getElementById('navLinks').classList.toggle('is-open')">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Andaman &amp; Nicobar</span>
+      <h1>Discover the <span class="accent">Untouched Paradise</span> of the Andaman Islands</h1>
+      <p class="hero-sub">Crystal-clear waters, pristine white-sand beaches, and vibrant coral reefs await you. Let us craft your perfect island escape — from honeymoon retreats to family adventures.</p>
+      <div class="hero-ctas">
+        <a href="packages.html" class="btn btn-primary">Explore Packages
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn-ghost">Plan My Trip</a>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <div>
+        <div class="hero-pin">11°N · 92°E</div>
+        <p style="margin-top:6px;">Radhanagar Beach, Havelock Island — voted Asia's best beach by Time magazine. We've been hosting trips here since 2016.</p>
+      </div>
+      <div>
+        <div class="hero-pin">Why us</div>
+        <p style="margin-top:6px;">Born and based in the Andamans. We know every island, every reef, every tide — and we'll plan your trip like it's our own.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ========= STATS ========= -->
+<div class="container">
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">12K<span class="accent">+</span></div>
+      <div class="stat-label">Happy Travellers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">150<span class="accent">+</span></div>
+      <div class="stat-label">Curated Packages</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8<span class="accent">+</span></div>
+      <div class="stat-label">Years of Trust</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========= ABOUT ========= -->
+<section class="section">
+  <div class="container">
+    <div class="surface-card-grid">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Boats on the turquoise Andaman Sea at low tide" />
+      <div>
+        <span class="eyebrow">Welcome to Islands Escapades</span>
+        <h2 class="h-display size-l" style="margin: var(--s-3) 0 var(--s-4);">Your trusted Andaman travel <span class="accent">companions</span> since 2016</h2>
+        <p class="lede">Locally rooted in Port Blair, we design journeys that go beyond the ordinary. Whether you seek the romance of a secluded sunset at Radhanagar Beach, the thrill of scuba diving at Havelock, or the serenity of a private yacht cruise — we handle every detail so you can simply savour the moment.</p>
+        <a href="about.html" class="btn btn-dark" style="margin-top: var(--s-4);">More about us
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= PACKAGES ========= -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Pick your pace</span>
+        <h2 class="h-display size-l">Trips <span class="accent">crafted</span> for the way you travel</h2>
+      </div>
+      <p class="lede">Honeymooners, families, divers, weekenders — every package is fully customisable. Prices below are per person, on a twin-share basis.</p>
+    </div>
+
+    <div class="carousel carousel-3" data-carousel>
+      <button class="carousel-btn carousel-btn-prev" aria-label="Previous packages">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-btn carousel-btn-next" aria-label="Next packages">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-track">
+
+      <a href="packages.html" class="card">
+        <div class="card-media">
+          <span class="card-tag is-accent">Bestseller</span>
+          <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=900&q=80" alt="Honeymoon Andaman beach" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">5 nights · Honeymoon</div>
+          <h3 class="card-title">Andaman Honeymoon Bliss</h3>
+          <p class="card-desc">Romantic sunsets at Havelock, candlelight beachside dinners, private ferry transfers, couples' spa at Neil Island.</p>
+          <div class="card-foot">
+            <div class="card-price">
+              <span class="label">From</span>
+              <span class="amount">₹28,999 <span class="unit">/ person</span></span>
+            </div>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="packages.html" class="card">
+        <div class="card-media">
+          <span class="card-tag">Family</span>
+          <img src="https://images.unsplash.com/photo-1535385452455-fed91d8e9aa3?auto=format&fit=crop&w=900&q=80" alt="Family at beach" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">6 nights · Family</div>
+          <h3 class="card-title">Family Island Explorer</h3>
+          <p class="card-desc">Port Blair, Havelock, Neil Island — glass-bottom boat rides, Cellular Jail light show, kid-friendly snorkelling.</p>
+          <div class="card-foot">
+            <div class="card-price">
+              <span class="label">From</span>
+              <span class="amount">₹22,499 <span class="unit">/ person</span></span>
+            </div>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="packages.html" class="card">
+        <div class="card-media">
+          <span class="card-tag is-accent">Popular</span>
+          <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=900&q=80" alt="Scuba diving" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">5 nights · Adventure</div>
+          <h3 class="card-title">Andaman Adventure Rush</h3>
+          <p class="card-desc">Scuba diving, sea walking, trekking to Elephant Beach, kayaking through mangroves, parasailing.</p>
+          <div class="card-foot">
+            <div class="card-price">
+              <span class="label">From</span>
+              <span class="amount">₹26,999 <span class="unit">/ person</span></span>
+            </div>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      </div><!-- /.carousel-track -->
+    </div><!-- /.carousel -->
+
+    <div class="center" style="margin-top: var(--s-5);">
+      <a href="packages.html" class="btn btn-primary">See all 7 packages
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========= DESTINATIONS ========= -->
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(10,147,150,0.04));">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Where we go</span>
+        <h2 class="h-display size-l">Islands <span class="accent">worth</span> the journey</h2>
+      </div>
+      <p class="lede">Eight islands, eight personalities. From the busy harbour town of Port Blair to the volcano of Barren Island — each one's a different kind of day.</p>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <button class="carousel-btn carousel-btn-prev" aria-label="Previous destinations">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-btn carousel-btn-next" aria-label="Next destinations">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-track">
+      <a href="destinations.html" class="card">
+        <div class="card-media">
+          <span class="card-tag is-accent">Most loved</span>
+          <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=900&q=80" alt="Havelock Island beach" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">Swaraj Dweep</div>
+          <h3 class="card-title">Havelock Island</h3>
+          <p class="card-desc">Home to Radhanagar Beach — perfect for diving, sunbathing, and romantic escapes.</p>
+          <div class="card-foot">
+            <span class="text-muted" style="font-size:13px;">Best Nov–Apr</span>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="destinations.html" class="card">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=900&q=80" alt="Neil Island clear water" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">Shaheed Dweep</div>
+          <h3 class="card-title">Neil Island</h3>
+          <p class="card-desc">Tranquil, fewer crowds, natural rock formations and finest snorkelling spots.</p>
+          <div class="card-foot">
+            <span class="text-muted" style="font-size:13px;">Best Oct–May</span>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="destinations.html" class="card">
+        <div class="card-media">
+          <span class="card-tag">Gateway</span>
+          <img src="https://images.unsplash.com/photo-1535385452455-fed91d8e9aa3?auto=format&fit=crop&w=900&q=80" alt="Port Blair harbour" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">Capital</div>
+          <h3 class="card-title">Port Blair</h3>
+          <p class="card-desc">The gateway — Cellular Jail, Corbyn's Cove, Ross Island, and Aberdeen Bazaar.</p>
+          <div class="card-foot">
+            <span class="text-muted" style="font-size:13px;">Year-round</span>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="destinations.html" class="card">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Baratang Island mangrove" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">Day trip</div>
+          <h3 class="card-title">Baratang</h3>
+          <p class="card-desc">Mangrove creeks, limestone caves, mud volcanoes, and Parrot Island at dusk.</p>
+          <div class="card-foot">
+            <span class="text-muted" style="font-size:13px;">Nov–Mar</span>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+      </div><!-- /.carousel-track -->
+    </div><!-- /.carousel -->
+
+    <div class="center" style="margin-top: var(--s-5);">
+      <a href="destinations.html" class="btn btn-link">See all 8 destinations →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========= ACTIVITIES ========= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">What to do</span>
+        <h2 class="h-display size-l">Above water. <span class="accent">Below water.</span> Everywhere in between.</h2>
+      </div>
+      <p class="lede">10 hand-picked activities across the islands. Add any to your itinerary and we'll handle the bookings.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <a href="activities.html" class="activity">
+        <span class="activity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 7 12 12 17C17 12 17 7 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 17V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <div class="activity-text"><div class="activity-name">Scuba Diving</div><div class="activity-price">From ₹3,500</div></div>
+      </a>
+      <a href="activities.html" class="activity">
+        <span class="activity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <div class="activity-text"><div class="activity-name">Snorkelling</div><div class="activity-price">From ₹1,200</div></div>
+      </a>
+      <a href="activities.html" class="activity">
+        <span class="activity-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 11V21M8 15h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <div class="activity-text"><div class="activity-name">Sea Walking</div><div class="activity-price">From ₹3,000</div></div>
+      </a>
+      <a href="activities.html" class="activity">
+        <span class="activity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4L21 12L12 20L3 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 4V20" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <div class="activity-text"><div class="activity-name">Kayaking</div><div class="activity-price">From ₹1,500</div></div>
+      </a>
+      <a href="activities.html" class="activity">
+        <span class="activity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18C7 14 11 14 12 18C13 14 17 14 21 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="3" r="1.5" fill="currentColor"/></svg></span>
+        <div class="activity-text"><div class="activity-name">Parasailing</div><div class="activity-price">From ₹2,500</div></div>
+      </a>
+      <a href="activities.html" class="activity">
+        <span class="activity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 22L12 4L19 22M9 14H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="activity-text"><div class="activity-name">Trekking</div><div class="activity-price">From ₹800</div></div>
+      </a>
+    </div>
+
+    <div class="center" style="margin-top: var(--s-5);">
+      <a href="activities.html" class="btn btn-link">See all 10 activities →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========= WHY US ========= -->
+<section class="section section-primary">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Why Islands Escapades</span>
+        <h2 class="h-display size-l">Four reasons travellers <span class="accent">choose</span> us</h2>
+      </div>
+      <p class="lede">No call-centre transfers. No hidden charges. No copy-paste itineraries. Just a small team that lives where you're going.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="num">01</div>
+        <h3 class="title">Local expertise</h3>
+        <p class="desc">Born and based in the Andamans. We've been on every boat, every reef, every trail you'll see.</p>
+      </div>
+      <div class="feature">
+        <div class="num">02</div>
+        <h3 class="title">Tailored itineraries</h3>
+        <p class="desc">Every trip crafted to your taste. Honeymooners get hammocks, divers get sites, families get pace.</p>
+      </div>
+      <div class="feature">
+        <div class="num">03</div>
+        <h3 class="title">Best price guarantee</h3>
+        <p class="desc">Transparent costs, no hidden ferry surcharges, no surprise inclusions vanishing at check-in.</p>
+      </div>
+      <div class="feature">
+        <div class="num">04</div>
+        <h3 class="title">24/7 support</h3>
+        <p class="desc">WhatsApp us anytime. If your ferry's late or the dive shop reshuffles, we're on it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= CTA ========= -->
+<section class="section">
+  <div class="container center">
+    <span class="eyebrow" style="justify-content: center; display: inline-flex;">Ready when you are</span>
+    <h2 class="h-display size-xl" style="margin: var(--s-3) 0;">Let's plan your <span class="accent">Andaman</span></h2>
+    <p class="lede" style="margin: 0 auto var(--s-5);">Tell us what kind of trip you're after and we'll send a first-draft itinerary in under 24 hours. Free, no commitment.</p>
+    <a href="contact.html" class="btn btn-primary">Start planning
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Islands <span class="accent">Escapades</span></h3>
+        <p>Your trusted travel partner for bespoke Andaman & Nicobar Islands holidays. Locally rooted in Port Blair since 2016.</p>
+        <div class="footer-social">
+          <a href="www.instagram.com/islandsescapades" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M14 7h3V4h-3a4 4 0 00-4 4v2H7v3h3v8h3v-8h3l1-3h-4V8a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M11 22l1.5-7M9 11c0-2 1.5-4 4-4s4 2 4 4-1.5 4-3 4-2-1-2-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Top Packages</h4>
+        <ul>
+          <li><a href="packages.html">Honeymoon</a></li>
+          <li><a href="packages.html">Family</a></li>
+          <li><a href="packages.html">Adventure</a></li>
+          <li><a href="packages.html">Luxury</a></li>
+          <li><a href="packages.html">Budget</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+917067920938">+91 7067 920 938</a></li>
+          <li><a href="mailto:hello@islandsescapades.com">hello@islandsescapades.com</a></li>
+          <li style="margin-top: var(--s-2); opacity: 0.78;">7 MB Market, opp HPO,<br/>Aberdeen Bazaar, Port Blair<br/>Andaman & Nicobar — 744101</li>
+          <li style="margin-top: var(--s-2); opacity: 0.78;">Mon–Sat · 9:00 AM – 7:00 PM IST</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Islands Escapades. All rights reserved.</span>
+      <div class="policies">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cancellation Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Carousel scroll controls
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const prev = carousel.querySelector('.carousel-btn-prev');
+    const next = carousel.querySelector('.carousel-btn-next');
+    if (!track) return;
+
+    const getStep = () => {
+      const card = track.querySelector('.card');
+      if (!card) return 320;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      return card.offsetWidth + gap;
+    };
+
+    const updateBtns = () => {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      if (prev) prev.disabled = track.scrollLeft <= 0;
+      if (next) next.disabled = track.scrollLeft >= max;
+    };
+
+    prev && prev.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+    next && next.addEventListener('click', () => track.scrollBy({ left: getStep(), behavior: 'smooth' }));
+    track.addEventListener('scroll', updateBtns, { passive: true });
+    window.addEventListener('resize', updateBtns);
+    updateBtns();
+  });
+</script>
+
+<!-- WhatsApp chat button (global) -->
+<a class="whatsapp-fab"
+   href="https://wa.me/917067920938?text=Hi%20Islands%20Escapades%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20the%20Andamans."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+  <span class="wa-label">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/>
+  </svg>
+</a>
+
+</body>
+</html>

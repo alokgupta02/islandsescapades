@@ -1,0 +1,65 @@
+# ===========================================================
+# Islands Escapades — .gitignore
+# Tracks: HTML, CSS, brand assets, project docs, dev scripts
+# Ignores: dependencies, dev artifacts, OS/IDE files, logs
+# ===========================================================
+
+# Dependencies & npm metadata (no runtime deps — site is pure static HTML/CSS)
+node_modules/
+package.json
+package-lock.json
+
+# Local dev tooling — not part of the site deliverable
+serve.mjs
+screenshot.mjs
+
+# Local dev artifacts — screenshots taken during development
+temporary screenshots/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / secrets — never commit
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.sublime-project
+.sublime-workspace
+.history/
+
+# Build / cache (if added later)
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
