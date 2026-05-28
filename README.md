@@ -63,6 +63,109 @@ Open `index.html` directly in a browser. Some features (the WhatsApp button, car
 
 ---
 
+## Local screenshot-driven development (optional)
+
+The site was built using a tight visual feedback loop: edit HTML/CSS → start a local server → take a Puppeteer screenshot → eyeball the diff → repeat. The two scripts that drive this loop are **not tracked in the repo** to keep the deliverable clean, but they're trivial to recreate.
+
+### Setup (one-time, per machine)
+
+```bash
+# Install puppeteer locally (this creates node_modules/ + package.json — both gitignored)
+npm init -y
+npm install puppeteer
+```
+
+### `serve.mjs` — local static server on port 3000
+
+Create `serve.mjs` in the project root with this content:
+
+```javascript
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
+
+const ROOT = path.dirname(url.fileURLToPath(import.meta.url));
+const PORT = 3000;
+
+const types = {
+  '.html': 'text/html; charset=utf-8',
+  '.css':  'text/css; charset=utf-8',
+  '.js':   'text/javascript; charset=utf-8',
+  '.mjs':  'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png':  'image/png',
+  '.jpg':  'image/jpeg', '.jpeg': 'image/jpeg',
+  '.svg':  'image/svg+xml',
+  '.webp': 'image/webp',
+  '.ico':  'image/x-icon',
+  '.woff2': 'font/woff2',
+};
+
+http.createServer((req, res) => {
+  let p = decodeURIComponent(req.url.split('?')[0]);
+  if (p.endsWith('/')) p += 'index.html';
+  const full = path.join(ROOT, p);
+  if (!full.startsWith(ROOT)) { res.statusCode = 403; return res.end('forbidden'); }
+  fs.readFile(full, (err, data) => {
+    if (err) { res.statusCode = 404; return res.end('not found'); }
+    res.setHeader('Content-Type', types[path.extname(full).toLowerCase()] || 'application/octet-stream');
+    res.end(data);
+  });
+}).listen(PORT, () => console.log(`http://localhost:${PORT}`));
+```
+
+Run with `node serve.mjs` — leave it running in a background terminal.
+
+### `screenshot.mjs` — Puppeteer screenshotter with auto-numbered output
+
+Create `screenshot.mjs` in the project root with this content:
+
+```javascript
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
+
+const ROOT = path.dirname(url.fileURLToPath(import.meta.url));
+const target = process.argv[2] || 'http://localhost:3000';
+const label = process.argv[3] || '';
+
+const outDir = path.join(ROOT, 'temporary screenshots');
+fs.mkdirSync(outDir, { recursive: true });
+
+const existing = fs.readdirSync(outDir).filter(f => /^screenshot-\d+/.test(f));
+const next = existing.reduce((m, f) => Math.max(m, parseInt(f.match(/^screenshot-(\d+)/)[1], 10)), 0) + 1;
+const filename = label ? `screenshot-${next}-${label}.png` : `screenshot-${next}.png`;
+const out = path.join(outDir, filename);
+
+const puppeteer = (await import('puppeteer')).default;
+const browser = await puppeteer.launch({ headless: 'new' });
+const page = await browser.newPage();
+await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
+await page.goto(target, { waitUntil: 'networkidle0', timeout: 30000 });
+await new Promise(r => setTimeout(r, 600));
+await page.screenshot({ path: out, fullPage: true });
+await browser.close();
+console.log(out);
+```
+
+### Usage
+
+```bash
+# Whole page
+node screenshot.mjs http://localhost:3000
+
+# Specific page with a label
+node screenshot.mjs http://localhost:3000/packages.html packages-grid
+
+# Files land in ./temporary screenshots/ with auto-incrementing numbers
+# screenshot-1.png, screenshot-2-packages-grid.png, etc.
+```
+
+Both scripts plus `node_modules/`, `package.json`, `package-lock.json`, and `temporary screenshots/` are listed in `.gitignore` — they exist only on your local machine.
+
+---
+
 ## Project structure
 
 ```
