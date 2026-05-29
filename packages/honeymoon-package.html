@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Honeymoon Bliss Package — Islands Escapades</title>
+<meta name="description" content="Celebrate your love with our Andaman honeymoon package. 5 nights across Havelock and Neil Island with candlelight dinners, beach walks, spa sessions, and stunning sunsets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" type="image/png" href="../brand_assets/ai.png">
+<style>
+  .pkg-meta { display:flex; flex-wrap:wrap; gap: var(--s-4); margin-top: var(--s-4); }
+  .pkg-meta .item { display:flex; flex-direction:column; gap:2px; }
+  .pkg-meta .label { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color: var(--accent); font-weight:600; }
+  .pkg-meta .value { font-family: var(--font-display); font-size: 32px; color: var(--surface); line-height:1; }
+  .pkg-meta .value .unit { font-family: var(--font-body); font-size:12px; color: rgba(255,249,244,0.7); font-weight:500; letter-spacing:0.04em; margin-left:4px; }
+  .itinerary { display:grid; gap: var(--s-3); }
+  .itin-day { background: var(--surface); border:1px solid var(--line); border-radius: var(--radius); padding: var(--s-4); display:grid; grid-template-columns: 84px 1fr; gap: var(--s-4); align-items:start; }
+  .itin-day .day-num { font-family: var(--font-display); font-size: 44px; color: var(--accent); line-height:1; }
+  .itin-day h3 { font-family: var(--font-body); font-weight:700; color: var(--primary); margin:0 0 6px; font-size:16px; }
+  .itin-day p { margin:0; color: var(--ink); opacity:0.78; font-size:14px; line-height:1.65; }
+  .incl-list { columns:2; column-gap: var(--s-5); list-style:none; padding:0; margin:0; }
+  .incl-list li { padding: 8px 0 8px 28px; position:relative; break-inside: avoid; font-size:14px; line-height:1.55; }
+  .incl-list li::before { content:""; position:absolute; left:0; top:14px; width:16px; height:2px; background: var(--accent); }
+  @media (max-width: 720px) { .incl-list { columns:1; } .itin-day { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Islands Escapades — home">
+      <img src="../brand_assets/ai.png" alt="Islands Escapades logo" />
+      <span class="brand-name">Islands <span class="accent">Escapades</span></span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../packages/index.html" class="is-active">Packages</a></li>
+        <li><a href="../destinations/index.html">Destinations</a></li>
+        <li><a href="../activities/index.html">Activities</a></li>
+        <li><a href="../blogs/index.html">Blog</a></li>
+        <li><a href="../contact/index.html" class="nav-cta">Let's Connect</a></li>
+      </ul>
+    </nav>
+    <button class="nav-burger" aria-label="Open menu" onclick="document.getElementById('navLinks').classList.toggle('is-open')"><span></span></button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="../packages/index.html">Packages</a> &nbsp;/&nbsp; Honeymoon Package</div>
+    <span class="eyebrow">Romantic Getaway</span>
+    <h1 class="h-display size-xl" style="margin: var(--s-3) 0;">Honeymoon <span class="accent">Bliss</span> Package</h1>
+    <p class="lede">Six days of sunset walks, candlelight dinners and quiet coves — designed for couples who want romance, privacy and the raw beauty of the islands.</p>
+    <div class="pkg-meta">
+      <div class="item"><span class="label">From</span><span class="value">&#8377;28,999<span class="unit">/ person</span></span></div>
+      <div class="item"><span class="label">Duration</span><span class="value">5N / 6D</span></div>
+      <div class="item"><span class="label">Group</span><span class="value">Couples</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="surface-card-grid">
+      <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=1200&q=80" alt="Honeymoon Bliss Package" />
+      <div>
+        <span class="eyebrow">About this trip</span>
+        <h2 class="h-display size-l" style="margin: var(--s-3) 0 var(--s-4);">Sunsets, spa &amp; <span class="accent">turquoise privacy</span></h2>
+        <p class="lede">Your Andaman honeymoon begins the moment you land in Port Blair. Picture yourselves walking hand-in-hand along the powdery white sands of Radhanagar Beach — consistently rated Asia's best beach — as the sun dips below the horizon in shades of amber and rose. This package is designed for couples who want romance, privacy, and the raw natural beauty of the islands.</p>
+        <p class="lede" style="margin-top: var(--s-4);">Over six days, you'll island-hop between Port Blair, Havelock, and Neil Island, enjoying candlelight dinners on the beach, sunrise kayaking through mangrove creeks, and a rejuvenating couples' spa session overlooking turquoise waters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Day by day</span>
+        <h2 class="h-display size-l">Your <span class="accent">itinerary</span></h2>
+      </div>
+      <p class="lede">A flexible draft — every day can be tuned to your pace and interests.</p>
+    </div>
+    <div class="itinerary">
+      <div class="itin-day"><div class="day-num">01</div><div><h3>Arrival in Port Blair</h3><p>Airport pickup, check-in at a sea-view hotel, evening visit to the Cellular Jail Light &amp; Sound Show. Welcome dinner with local Andaman seafood.</p></div></div>
+      <div class="itin-day"><div class="day-num">02</div><div><h3>Port Blair to Havelock Island</h3><p>Morning cruise to Havelock via Makruzz/Nautika ferry. Check-in at a beachfront resort. Afternoon free for Radhanagar Beach sunset. Candlelight dinner on the sand.</p></div></div>
+      <div class="itin-day"><div class="day-num">03</div><div><h3>Havelock Exploration</h3><p>Sunrise at Kalapathar Beach. Couples' snorkelling at Elephant Beach (vibrant coral reefs). Afternoon couples' spa. Evening at leisure.</p></div></div>
+      <div class="itin-day"><div class="day-num">04</div><div><h3>Havelock to Neil Island</h3><p>Ferry to Neil Island. Visit Bharatpur Beach and the Natural Rock Bridge (Howrah Bridge). Sunset cycling tour through the island's quiet lanes.</p></div></div>
+      <div class="itin-day"><div class="day-num">05</div><div><h3>Neil Island &amp; Return</h3><p>Morning at Laxmanpur Beach. Glass-bottom boat ride over coral gardens. Afternoon ferry back to Port Blair. Evening shopping at Aberdeen Bazaar.</p></div></div>
+      <div class="itin-day"><div class="day-num">06</div><div><h3>Departure</h3><p>Breakfast and airport transfer. Farewell with complimentary shell souvenirs.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">What's included</span>
+        <h2 class="h-display size-l">Everything <span class="accent">covered</span></h2>
+      </div>
+      <p class="lede">Transparent. No hidden ferry surcharges, no surprise inclusions vanishing at check-in.</p>
+    </div>
+    <ul class="incl-list">
+      <li>Premium stays — beachfront resorts with sea-view rooms across all islands</li>
+      <li>Ferry transfers — AC cruise tickets between Port Blair, Havelock &amp; Neil</li>
+      <li>Daily breakfast + 2 candlelight dinners + welcome dinner</li>
+      <li>Couples' spa — 60-minute rejuvenating spa session for two</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-primary">
+  <div class="container center">
+    <span class="eyebrow" style="justify-content: center; display: inline-flex;">Customise it</span>
+    <h2 class="h-display size-xl" style="margin: var(--s-3) 0;">Make it <span class="accent">yours</span></h2>
+    <p class="lede" style="margin: 0 auto var(--s-5);">This is a starting point — we'll tune dates, accommodation tier, and activities to your taste. First-draft itinerary in under 24 hours.</p>
+    <a href="../contact/index.html" class="btn btn-primary">Get a custom quote
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Islands <span class="accent">Escapades</span></h3>
+        <p>Your trusted travel partner for bespoke Andaman &amp; Nicobar Islands holidays. Locally rooted in Port Blair since 2016.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M14 7h3V4h-3a4 4 0 00-4 4v2H7v3h3v8h3v-8h3l1-3h-4V8a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M11 22l1.5-7M9 11c0-2 1.5-4 4-4s4 2 4 4-1.5 4-3 4-2-1-2-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul>
+        <li><a href="../index.html">Home</a></li><li><a href="../about/index.html">About Us</a></li><li><a href="../packages/index.html">Packages</a></li><li><a href="../destinations/index.html">Destinations</a></li><li><a href="../activities/index.html">Activities</a></li><li><a href="../blogs/index.html">Blog</a></li><li><a href="../contact/index.html">Contact</a></li><li><a href="../faq/index.html">FAQ</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Top Packages</h4><ul>
+        <li><a href="../packages/honeymoon-package.html">Honeymoon</a></li><li><a href="../packages/family-package.html">Family</a></li><li><a href="../packages/adventure-package.html">Adventure</a></li><li><a href="../packages/luxury-package.html">Luxury</a></li><li><a href="../packages/budget-package.html">Budget</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Get in touch</h4><ul>
+        <li><a href="tel:+917067920938">+91 7067 920 938</a></li>
+        <li><a href="mailto:hello@islandsescapades.com">hello@islandsescapades.com</a></li>
+        <li style="margin-top: var(--s-2); opacity: 0.78;">7 MB Market, opp HPO,<br/>Aberdeen Bazaar, Port Blair<br/>Andaman &amp; Nicobar — 744101</li>
+        <li style="margin-top: var(--s-2); opacity: 0.78;">Mon–Sat · 9:00 AM – 7:00 PM IST</li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Islands Escapades. All rights reserved.</span>
+      <div class="policies"><a href="../policies/privacy-policy.html">Privacy Policy</a><a href="../policies/terms-and-conditions.html">Terms &amp; Conditions</a><a href="../policies/cancellation-refund-policy.html">Cancellation Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/917067920938?text=Hi%20Islands%20Escapades%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20the%20Andamans." target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+  <span class="wa-label">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+</a>
+
+</body>
+</html>

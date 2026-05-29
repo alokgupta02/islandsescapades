@@ -14,7 +14,7 @@ serve.mjs
 screenshot.mjs
 
 # Local dev artifacts — screenshots taken during development
-temporary screenshots/
+#temporary screenshots/
 
 # Logs
 *.log
