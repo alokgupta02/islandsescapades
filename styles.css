@@ -621,7 +621,6 @@ img { display: block; max-width: 100%; height: auto; }
 .activity .activity-icon {
   width: 56px; height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--secondary), var(--primary));
   display: inline-flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
