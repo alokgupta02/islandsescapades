@@ -1,6 +1,6 @@
-# Islands Escapades
+# Islands Therapy
 
-A multipage marketing website for **Islands Escapades** — a bespoke travel agency for the Andaman & Nicobar Islands, based in Port Blair.
+A multipage marketing website for **Islands Therapy** — a bespoke travel agency for the Andaman & Nicobar Islands, based in Port Blair.
 
 Pure static HTML + CSS. No build step. No framework. No runtime dependencies.
 
@@ -236,7 +236,7 @@ Key tokens already wired into `styles.css`:
 | `--surface` | `#FFF9F4` | White Cloud — page backgrounds |
 | `--ink` | `#0E2A33` | Deep Ink — body text |
 
-Architecture decisions (e.g., why the brand is named *Islands Escapades* and not *Andaman Voyages*) live in [`docs/adr/`](docs/adr/).
+Architecture decisions (e.g., why the brand is named *Islands Therapy* and not *Andaman Voyages*) live in [`docs/adr/`](docs/adr/).
 
 ---
 
@@ -265,4 +265,4 @@ No environment variables. No secrets. No runtime.
 
 ## License
 
-Proprietary — © Islands Escapades, 2026. All rights reserved.
+Proprietary — © Islands Therapy, 2026. All rights reserved.

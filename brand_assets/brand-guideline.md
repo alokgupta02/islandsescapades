@@ -1,4 +1,4 @@
-# Islands Escapades — Brand Guideline
+# Islands Therapy — Brand Guideline
 
 *A travel agency for the Andaman & Nicobar Islands*
 
@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Name** | Islands Escapades |
+| **Name** | Islands Therapy |
 | **Tagline (working — to revisit)** | Discover the Untouched Paradise of the Andaman Islands. |
 | **Geographic descriptor** | Andaman & Nicobar |
 | **What we are** | A travel agency selling trips exclusively to the Andaman & Nicobar Islands |
@@ -51,11 +51,11 @@ This personality reads **less premium** than a quietly-confident editorial brand
 
 ## 3. Name & wordmark
 
-**Islands Escapades** — an evocative, place-agnostic name. The word *Andaman* deliberately does not appear in the name (the namespace is saturated, matching domains unavailable). The Andaman association is carried at the metadata, content, and lockup level — page titles, hero copy, alt text, the verbal one-liner.
+**Islands Therapy** — an evocative, place-agnostic name. The word *Andaman* deliberately does not appear in the name (the namespace is saturated, matching domains unavailable). The Andaman association is carried at the metadata, content, and lockup level — page titles, hero copy, alt text, the verbal one-liner.
 
 **Visual identity must do the place-identification work the name does not.** This is load-bearing: the logo mark, color palette, and photography all carry "Andaman" because the wordmark won't.
 
-The name's playful tilt (*Escapades*) is fully in personality: it sounds like a friend suggesting an idea, not an institution publishing a catalog.
+The name's playful tilt (*Therapy*) is fully in personality: it sounds like a friend suggesting an idea, not an institution publishing a catalog.
 
 → See [ADR 0001](docs/adr/0001-descriptive-name-for-mass-market-brand.md) for the full naming rationale.
 
@@ -77,7 +77,7 @@ The mark does the place-identification work the wordmark cannot, pulls the marig
 
 ### Lockup
 
-Mark sits to the **left** of the wordmark. Wordmark *Islands Escapades* is rendered in **Caveat Brush** — Primary Sky Blue, with *Escapades* in Summer Sun marigold for one-word emphasis.
+Mark sits to the **left** of the wordmark. Wordmark *Islands Therapy* is rendered in **Caveat Brush** — Primary Sky Blue, with *Therapy* in Summer Sun marigold for one-word emphasis.
 
 The geometric mark + handwritten wordmark creates a "considered but casual" combo (reference feel: Patagonia's clean mark with hand-crafted text).
 

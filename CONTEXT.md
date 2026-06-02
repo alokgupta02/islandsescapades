@@ -11,7 +11,7 @@ A travel agency selling trips **exclusively to the Andaman & Nicobar Islands**. 
 The brand serves a **broad audience** — honeymooners, families, divers, adventurers — but is **not designed around any single segment**. It does not pander. Instead, it trusts the destination to do the qualifying work: the audience self-selects into trip types. Commercial center of gravity remains domestic Indian honeymooners and families, but no brand decision is made *for* them at the expense of others.
 
 ### Brand Name
-**Islands Escapades.** An evocative, place-agnostic name. *Andaman* deliberately does not appear in the name — the namespace is saturated and matching domains are unavailable. The Andaman association is carried at the metadata, content, and lockup level (page titles, hero copy, alt text, the company's verbal one-liner). See [[ADR 0001]].
+**Islands Therapy.** An evocative, place-agnostic name. *Andaman* deliberately does not appear in the name — the namespace is saturated and matching domains are unavailable. The Andaman association is carried at the metadata, content, and lockup level (page titles, hero copy, alt text, the company's verbal one-liner). See [[ADR 0001]].
 
 Implication: the visual system has to do the place-identification work the name does not. Photography and palette must say *Andaman* the moment a user lands. This is a higher bar than a descriptive name would have demanded, and it is load-bearing for everything downstream.
 
@@ -98,7 +98,7 @@ A 5-color system with strict roles. No color may take a second role without an e
 ### Logo Mark
 **Concept: arc + dot — "sun rising over water."** Two soft horizontal arcs (the upper in Primary Sky Blue, the lower in Secondary Teal Ocean) under a single Summer Sun (marigold) dot. The mark does the place-identification work the wordmark cannot, pulls the marigold accent into the brand mark itself, and survives the 16–28px favicon test without identity fragmentation.
 
-**Lockup:** mark sits to the left of the wordmark *Islands Escapades*, rendered in **Caveat Brush** (Primary Sky Blue, with *Escapades* in Summer Sun marigold for one-word emphasis — color, not italic, since Caveat Brush is already slanted). The geometric mark + handwritten wordmark creates a "considered but casual" combo (reference: Patagonia's clean mark with hand-crafted text feel). Optional tagline "Andaman & Nicobar" sits beneath in Manrope, all-caps, wide tracking, in Secondary Teal Ocean.
+**Lockup:** mark sits to the left of the wordmark *Islands Therapy*, rendered in **Caveat Brush** (Primary Sky Blue, with *Therapy* in Summer Sun marigold for one-word emphasis — color, not italic, since Caveat Brush is already slanted). The geometric mark + handwritten wordmark creates a "considered but casual" combo (reference: Patagonia's clean mark with hand-crafted text feel). Optional tagline "Andaman & Nicobar" sits beneath in Manrope, all-caps, wide tracking, in Secondary Teal Ocean.
 
 **Do not:**
 - Add a third arc, a palm leaf, a boat, or any pictorial element. The mark's discipline is what keeps it from going generic-tropical.

@@ -1,5 +1,5 @@
 /* ============================================================
-   Islands Escapades — shared styles
+   Islands Therapy — shared styles
    Tokens follow brand-guideline.md exactly.
    ============================================================ */
 
@@ -406,7 +406,7 @@ img { display: block; max-width: 100%; height: auto; }
    ============================================================ */
 
 .section {
-  padding: var(--s-7) 0;
+  padding: var(--s-3) 0;
 }
 .section-tight { padding: var(--s-6) 0; }
 .section-dark {
@@ -456,6 +456,9 @@ img { display: block; max-width: 100%; height: auto; }
 }
 @media (max-width: 640px) {
   .stats { grid-template-columns: 1fr; gap: var(--s-4); padding: var(--s-5) 0; }
+}
+.stat {
+  text-align: center;
 }
 .stat .stat-num {
   font-family: var(--font-display);
@@ -1046,4 +1049,314 @@ img { display: block; max-width: 100%; height: auto; }
 
 @media (prefers-reduced-motion: reduce) {
   .whatsapp-fab { animation: none; }
+}
+
+/* ============================================================
+   Motion — ambient drift, page-load reveal, scroll-reveal,
+   micro-interactions. Only transform + opacity are animated.
+   ============================================================ */
+
+:root {
+  --ease-spring: cubic-bezier(.2, .8, .2, 1);
+  --ease-soft:   cubic-bezier(.4, 0, .2, 1);
+  --reveal-dist: 28px;
+  --reveal-dur:  900ms;
+}
+
+/* ----- Page-load reveal (hero only — runs once on every page load) ----- */
+@keyframes mo-fadeUp {
+  from { opacity: 0; transform: translate3d(0, var(--reveal-dist), 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes mo-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hero .eyebrow,
+.hero h1,
+.hero-sub,
+.hero-ctas,
+.hero-aside > * {
+  opacity: 0;
+  animation: mo-fadeUp var(--reveal-dur) var(--ease-spring) forwards;
+}
+.hero .eyebrow            { animation-delay:  80ms; }
+.hero h1                  { animation-delay: 220ms; }
+.hero-sub                 { animation-delay: 460ms; }
+.hero-ctas                { animation-delay: 640ms; }
+.hero-aside > *:nth-child(1) { animation-delay: 800ms; }
+.hero-aside > *:nth-child(2) { animation-delay: 940ms; }
+
+/* Page-header content (inner pages) entrance */
+.page-header .eyebrow,
+.page-header .h-display,
+.page-header .lede,
+.page-header .breadcrumb {
+  opacity: 0;
+  animation: mo-fadeUp var(--reveal-dur) var(--ease-spring) forwards;
+}
+.page-header .breadcrumb { animation-delay:  80ms; }
+.page-header .eyebrow    { animation-delay: 160ms; }
+.page-header .h-display  { animation-delay: 260ms; }
+.page-header .lede       { animation-delay: 460ms; }
+
+/* ----- Hero background: slow breathing zoom (ocean swell feel) ----- */
+@keyframes mo-breathe {
+  0%   { transform: scale(1.0)  translate3d(0, 0, 0); }
+  100% { transform: scale(1.08) translate3d(-1.2%, -1.6%, 0); }
+}
+.hero-bg {
+  animation: mo-breathe 22s ease-in-out infinite alternate;
+  transform-origin: 50% 60%;
+  will-change: transform;
+}
+
+/* ----- Hero floating sun glow (drifts behind text) ----- */
+.hero-inner { position: relative; }
+.hero-inner > * { position: relative; z-index: 1; }
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  top: -2%;
+  right: 4%;
+  width: clamp(160px, 22vw, 320px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(238,155,0,0.55) 0%, rgba(238,155,0,0.18) 38%, rgba(238,155,0,0.04) 62%, transparent 78%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+  animation: mo-sunFloat 14s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+@keyframes mo-sunFloat {
+  0%   { transform: translate3d(0, 0, 0) scale(1);     opacity: 0.85; }
+  50%  { transform: translate3d(-14px, 20px, 0) scale(1.06); opacity: 1; }
+  100% { transform: translate3d(10px, -12px, 0) scale(0.96); opacity: 0.78; }
+}
+@media (max-width: 920px) {
+  .hero-inner::before { top: -6%; right: -8%; opacity: 0.7; }
+}
+
+/* ----- Page-header gentle gradient drift ----- */
+.page-header::before {
+  animation: mo-bgDrift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes mo-bgDrift {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(2%, -1.5%, 0); }
+}
+
+/* ----- Nav logo: gentle idle bob + hover micro-rotate ----- */
+@keyframes mo-bob {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -3px, 0); }
+}
+.nav-logo img {
+  animation: mo-bob 4.2s ease-in-out infinite;
+  transition: transform 320ms var(--ease-spring);
+  will-change: transform;
+}
+.nav-logo:hover img {
+  animation-play-state: paused;
+  transform: rotate(-6deg) scale(1.06);
+}
+
+/* ----- Nav CTA: subtle attention pulse on its shadow ----- */
+@keyframes mo-ctaPulse {
+  0%, 100% { box-shadow: 0 8px 22px -10px rgba(0,95,115,0.55), 0 0 0 0 rgba(238,155,0,0.35); }
+  60%      { box-shadow: 0 8px 22px -10px rgba(0,95,115,0.55), 0 0 0 10px rgba(238,155,0,0); }
+}
+.nav-links a.nav-cta {
+  animation: mo-ctaPulse 3.6s ease-out infinite;
+}
+.nav-links a.nav-cta:hover {
+  animation-play-state: paused;
+  transform: translateY(-1px);
+}
+
+/* ----- Eyebrow line "draw in" on scroll reveal ----- */
+[data-reveal] .eyebrow::before,
+.in-view .eyebrow::before {
+  transform-origin: left center;
+}
+
+/* ----- Scroll-reveal utility (motion.js adds .in-view) ----- */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-dist), 0);
+  transition:
+    opacity var(--reveal-dur) var(--ease-spring),
+    transform var(--reveal-dur) var(--ease-spring);
+  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+  will-change: opacity, transform;
+}
+[data-reveal="fade"]  { transform: none; }
+[data-reveal="left"]  { transform: translate3d(calc(-1 * var(--reveal-dist)), 0, 0); }
+[data-reveal="right"] { transform: translate3d(var(--reveal-dist), 0, 0); }
+[data-reveal="scale"] { transform: scale(0.94); opacity: 0; }
+
+[data-reveal].in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+[data-reveal="scale"].in-view { transform: scale(1); }
+
+/* ----- Card image: continuous Ken-Burns drift (very subtle) ----- */
+@keyframes mo-kenburns {
+  0%   { transform: scale(1.0)  translate3d(0, 0, 0); }
+  100% { transform: scale(1.06) translate3d(-1%, -1%, 0); }
+}
+.card .card-media img {
+  animation: mo-kenburns 16s ease-in-out infinite alternate;
+}
+/* Hover takes over from idle drift */
+.card:hover .card-media img {
+  animation: none;
+  transform: scale(1.08);
+}
+
+/* ----- Card glint sweep on hover ----- */
+.card-media {
+  isolation: isolate;
+}
+.card-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg,
+    transparent 35%,
+    rgba(255,249,244,0.22) 50%,
+    transparent 65%);
+  transform: translate3d(-110%, 0, 0);
+  transition: transform 1100ms var(--ease-spring);
+  pointer-events: none;
+  z-index: 3;
+}
+.card:hover .card-media::before {
+  transform: translate3d(110%, 0, 0);
+}
+
+/* ----- Activity hover: icon tilt + slide ----- */
+.activity .activity-icon {
+  transition: transform 360ms var(--ease-spring);
+}
+.activity:hover .activity-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+/* ----- Feature card: number scale-up on hover ----- */
+.feature .num {
+  transition: transform 360ms var(--ease-spring), color 240ms ease;
+  display: inline-block;
+}
+.feature:hover .num {
+  transform: scale(1.15);
+}
+.feature {
+  transition: transform 320ms var(--ease-spring), border-color 240ms ease, box-shadow 320ms;
+}
+.feature:hover {
+  transform: translate3d(0, -3px, 0);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ----- Stat numbers: subtle "count-in" replaces with JS, but baseline transition ----- */
+.stat .stat-num {
+  transition: transform 600ms var(--ease-spring);
+}
+.stat[data-reveal].in-view .stat-num {
+  /* simple punch — gives stat a tactile pop on entry */
+  animation: mo-statPop 800ms var(--ease-spring) 300ms both;
+}
+@keyframes mo-statPop {
+  0%   { transform: translateY(8px) scale(0.96); }
+  60%  { transform: translateY(-2px) scale(1.04); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* ----- Section eyebrow line: continuous shimmer ----- */
+@keyframes mo-lineShimmer {
+  0%, 100% { transform: scaleX(1);   opacity: 1; }
+  50%      { transform: scaleX(1.4); opacity: 0.6; }
+}
+.section-head .eyebrow::before,
+.hero .eyebrow::before {
+  transform-origin: left center;
+}
+/* On reveal only — gentle one-time draw, no permanent shimmer (too busy) */
+.section-head[data-reveal].in-view .eyebrow::before {
+  animation: mo-lineDraw 700ms var(--ease-spring) 200ms both;
+}
+@keyframes mo-lineDraw {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* ----- Section divider wave (decorative, optional via .wave-divider) ----- */
+.wave-divider {
+  position: relative;
+  height: 36px;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
+.wave-divider svg {
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  height: 100%;
+  color: var(--secondary);
+  opacity: 0.18;
+  animation: mo-waveSlide 18s linear infinite;
+}
+@keyframes mo-waveSlide {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ----- Whatsapp FAB: it already pulses. Add subtle hover bounce ----- */
+/* (already handled in existing rule) */
+
+/* ----- Carousel buttons: rest-state subtle attention shimmer ----- */
+.carousel-btn:not(:hover):not(:disabled) {
+  animation: mo-fadeBob 4.8s ease-in-out infinite;
+}
+@keyframes mo-fadeBob {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -3px, 0); }
+}
+
+/* ----- Reduced-motion: kill everything ambient. Keep reveal as instant fade ----- */
+@media (prefers-reduced-motion: reduce) {
+  .hero .eyebrow,
+  .hero h1,
+  .hero-sub,
+  .hero-ctas,
+  .hero-aside > *,
+  .page-header .eyebrow,
+  .page-header .h-display,
+  .page-header .lede,
+  .page-header .breadcrumb {
+    opacity: 1;
+    animation: none;
+  }
+  .hero-bg,
+  .hero-inner::before,
+  .page-header::before,
+  .nav-logo img,
+  .nav-links a.nav-cta,
+  .card .card-media img,
+  .wave-divider svg,
+  .carousel-btn {
+    animation: none;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
