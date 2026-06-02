@@ -1470,9 +1470,12 @@ img { display: block; max-width: 100%; height: auto; }
   pointer-events: none;
 }
 
-/* Title text — overlaid on media */
+/* Title text — sits above the expanding media card */
 .sh-title {
-  position: relative;
+  position: absolute;
+  top: var(--s-4);      /* clear of nav, sits in space above image */
+  left: 0;
+  right: 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -1480,7 +1483,6 @@ img { display: block; max-width: 100%; height: auto; }
   text-align: center;
   gap: 4px;
   pointer-events: none;
-  width: 100%;
 }
 .sh-title-row { will-change: transform; }
 
@@ -1500,6 +1502,65 @@ img { display: block; max-width: 100%; height: auto; }
   text-shadow: 0 2px 40px rgba(0,0,0,0.45), 0 0 90px rgba(0,0,0,0.22);
 }
 .sh-title h1 .accent { color: var(--accent); }
+
+/* Mobile: tighter font so title fits in the space above the image */
+@media (max-width: 640px) {
+  .sh-title { top: var(--s-3); }
+  .sh-title h1 { font-size: 38px; }
+  .sh-title .eyebrow { font-size: 10px; letter-spacing: 0.18em; }
+}
+
+/* Tagline — hidden until user zooms back out after first expansion */
+.sh-tagline {
+  position: absolute;
+  left: var(--s-5);
+  right: var(--s-5);
+  bottom: 96px;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Each line starts invisible; .is-shown triggers the stagger */
+.sh-tag-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(10px);
+  font-family: var(--font-body);
+  font-size: clamp(11px, 1.1vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--surface);
+  text-shadow: 0 1px 16px rgba(0,0,0,0.60), 0 1px 4px rgba(0,0,0,0.35);
+  line-height: 1.9;
+}
+
+/* Staggered entrance triggered by JS adding .is-shown */
+.sh-tagline.is-shown .sh-tag-line {
+  animation: sh-tag-in 520ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+.sh-tagline.is-shown .sh-tag-line:nth-child(1) { animation-delay:   0ms; }
+.sh-tagline.is-shown .sh-tag-line:nth-child(2) { animation-delay: 110ms; }
+.sh-tagline.is-shown .sh-tag-line:nth-child(3) { animation-delay: 220ms; }
+
+@keyframes sh-tag-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Clear the WhatsApp FAB on small screens */
+@media (max-width: 640px) {
+  .sh-tagline { right: 72px; text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-tag-line { transition: opacity 200ms ease; }
+  .sh-tagline.is-shown .sh-tag-line { animation: none; opacity: 1; transform: none; }
+}
 
 /* Scroll hint */
 .sh-hint {
@@ -1597,4 +1658,109 @@ img { display: block; max-width: 100%; height: auto; }
 
 @media (prefers-reduced-motion: reduce) {
   .sh-hint-line { animation: none; }
+}
+
+/* ============================================================
+   Mobile-First Responsive Enhancements
+   ============================================================ */
+
+/* 1. Remove 300ms tap delay + clear iOS blue flash on all interactives */
+.btn, .card, .activity, .feature,
+.nav-links a, .nav-burger,
+.whatsapp-fab, .footer-social a,
+.card-arrow, .carousel-btn,
+.breadcrumb a, .btn-link,
+details summary {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Minimum 44×44px touch targets (Apple HIG / WCAG 2.5.5) */
+.btn        { min-height: 44px; }
+.nav-burger { min-width: 44px; min-height: 44px; }
+.card-arrow { width: 44px; height: 44px; }
+
+/* 3. Mobile nav open menu: warm bg to match page, adequate link tap area */
+.nav-links.is-open {
+  background: var(--page-bg);
+}
+@media (max-width: 920px) {
+  .nav-links.is-open li a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* 4. Section & page-header: tighter vertical padding on phones */
+@media (max-width: 640px) {
+  .section      { padding: 44px 0; }
+  .section-head { margin-bottom: var(--s-5); padding-bottom: var(--s-3); }
+  .page-header  { padding: var(--s-6) 0 var(--s-5); }
+  .sh-reveal    { padding: var(--s-5) 0 var(--s-6); }
+}
+
+/* 5. Hero CTAs: stack vertically on narrow phones so each button spans full width */
+@media (max-width: 480px) {
+  .hero-ctas,
+  .sh-reveal .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-ctas .btn,
+  .sh-reveal .hero-ctas .btn {
+    justify-content: center;
+  }
+}
+
+/* 6. Display headings: guard the minimum size on very narrow viewports (320px) */
+@media (max-width: 400px) {
+  .h-display.size-xl { font-size: clamp(36px, 9.5vw, 56px); }
+  .h-display.size-l  { font-size: clamp(30px, 8vw,  44px); }
+  .h-display.size-m  { font-size: clamp(26px, 7vw,  36px); }
+}
+
+/* 7. Card price: prevent overflow in narrow 2-col grids on mid-phones */
+@media (max-width: 480px) {
+  .card-price .amount { font-size: 22px; }
+}
+
+/* 8. Footer bottom row: stack when it wraps beyond two lines */
+@media (max-width: 400px) {
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-bottom .policies { flex-direction: column; gap: var(--s-2); }
+}
+
+/* 9. Section-primary CTA: body copy stays readable at 16px */
+@media (max-width: 640px) {
+  .section-primary .lede { font-size: 16px; }
+}
+
+/* 10. iOS momentum scroll on carousels */
+.carousel-track { -webkit-overflow-scrolling: touch; }
+
+/* 11. Page header lede: full width on mobile — remove 60ch cap */
+@media (max-width: 640px) {
+  .page-header .lede { max-width: 100%; }
+}
+
+/* 12. Contact grid gap tighter on mid screens */
+@media (max-width: 640px) {
+  .contact-grid { gap: var(--s-4); }
+  .contact-item .value { font-size: 15px; }
+}
+
+/* 13. Stats: number size reduced on very small screens */
+@media (max-width: 400px) {
+  .stat .stat-num { font-size: clamp(44px, 12vw, 72px); }
+}
+
+/* 14. Surface-card-grid image: fixed aspect ratio so it doesn't collapse */
+@media (max-width: 900px) {
+  .surface-card-grid img { aspect-ratio: 16 / 9; height: auto; }
+}
+
+/* 15. Eyebrow: reduce letter-spacing on phones to prevent overflow */
+@media (max-width: 480px) {
+  .eyebrow { letter-spacing: 0.14em; font-size: 11px; }
 }

@@ -75,6 +75,13 @@
       </div>
     </div>
 
+    <!-- Tagline: animates in only after user has zoomed in and fully zoomed back out -->
+    <div class="sh-tagline" id="shTagline">
+      <span class="sh-tag-line">Crystal Clear Waters.</span>
+      <span class="sh-tag-line">Pristine White-Sand Beaches.</span>
+      <span class="sh-tag-line">and an adventure</span>
+    </div>
+
     <!-- Scroll hint -->
     <div class="sh-hint" id="shHint">
       <p>Scroll to expand</p>
@@ -560,7 +567,10 @@
   var elRow1   = document.getElementById('shRow1');
   var elRow2   = document.getElementById('shRow2');
   var elHint   = document.getElementById('shHint');
+  var elTagline= document.getElementById('shTagline');
   var elReveal = document.getElementById('shReveal');
+
+  var taglineShown = false;
 
   /* ---- render all moving parts from progress (0–1) ---- */
   function render() {
@@ -583,7 +593,23 @@
     elRow1.style.transform = 'translateX(-' + tx + 'vw)';
     elRow2.style.transform = 'translateX('  + tx + 'vw)';
 
+    /* Hint fades out as user starts scrolling */
     elHint.style.opacity = Math.max(0, 1 - p * 4).toString();
+
+    /* Tagline: appears when image is fully expanded (zoomed in) */
+    if (p >= 0.99) {
+      if (!taglineShown) {
+        taglineShown = true;
+        elTagline.classList.remove('is-shown');
+        void elTagline.offsetWidth;   /* force reflow so animation replays */
+        elTagline.classList.add('is-shown');
+      }
+    } else {
+      if (taglineShown) {
+        taglineShown = false;
+        elTagline.classList.remove('is-shown');
+      }
+    }
   }
 
   /* ---- advance progress by delta ---- */

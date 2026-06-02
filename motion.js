@@ -124,7 +124,19 @@
     statObserver.observe(el);
   });
 
-  /* ---------- 4. Hero parallax (subtle, transform only) ---------- */
+  /* ---------- 4. Mobile nav: close on outside tap or any link click ---------- */
+  var navEl   = document.querySelector('.nav');
+  var navList = document.getElementById('navLinks');
+  if (navEl && navList) {
+    document.addEventListener('click', function (e) {
+      if (!navEl.contains(e.target)) navList.classList.remove('is-open');
+    }, { passive: true });
+    navList.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { navList.classList.remove('is-open'); }, { passive: true });
+    });
+  }
+
+  /* ---------- 5. Hero parallax (subtle, transform only) ---------- */
   var heroBg = document.querySelector('.hero-bg');
   if (heroBg) {
     var heroSection = heroBg.closest('.hero');
