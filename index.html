@@ -39,36 +39,81 @@
   </div>
 </header>
 
-<!-- ========= HERO ========= -->
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div>
-      <span class="eyebrow">Andaman &amp; Nicobar</span>
-      <h1>Discover the <span class="accent">Untouched Paradise</span> of the Andaman Islands</h1>
-      <p class="hero-sub">Crystal-clear waters, pristine white-sand beaches, and vibrant coral reefs await you. Let us craft your perfect island escape — from honeymoon retreats to family adventures.</p>
-      <div class="hero-ctas">
-        <a href="./packages/index.html" class="btn btn-primary">Explore Packages
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="./contact/index.html" class="btn btn-ghost">Plan My Trip</a>
+<!-- ========= SCROLL-EXPANSION HERO ========= -->
+<div id="scroll-hero" class="sh-section">
+
+  <!-- Background image — fades as media expands -->
+  <div class="sh-bg" id="shBg">
+    <img
+      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
+      alt=""
+      aria-hidden="true"
+    />
+    <div class="sh-bg-tint"></div>
+  </div>
+
+  <!-- 100dvh stage: expanding media + sliding title -->
+  <div class="sh-stage" id="shStage">
+
+    <!-- Expanding image card -->
+    <div class="sh-media" id="shMedia">
+      <img
+        src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=1280&q=80"
+        alt="Andaman Islands — crystal-clear turquoise waters at Radhanagar Beach"
+      />
+      <div class="sh-media-overlay" id="shMediaOverlay"></div>
+    </div>
+
+    <!-- Title (two rows slide apart as image expands) -->
+    <div class="sh-title">
+      <div class="sh-title-row" id="shRow1">
+        <span class="eyebrow">Andaman &amp; Nicobar</span>
+        <h1>Discover</h1>
+      </div>
+      <div class="sh-title-row" id="shRow2">
+        <h1>the <span class="accent">Untouched Paradise</span></h1>
       </div>
     </div>
-    <aside class="hero-aside">
-      <div>
-        <div class="hero-pin">11°N · 92°E</div>
-        <p style="margin-top:6px;">Radhanagar Beach, Havelock Island — voted Asia's best beach by Time magazine. We've been hosting trips here since 2016.</p>
+
+    <!-- Scroll hint -->
+    <div class="sh-hint" id="shHint">
+      <p>Scroll to expand</p>
+      <div class="sh-hint-line"></div>
+    </div>
+
+  </div><!-- /.sh-stage -->
+
+  <!-- Content revealed after full expansion -->
+  <div class="sh-reveal" id="shReveal">
+    <div class="container">
+      <div class="sh-inner">
+        <div>
+          <p class="hero-sub">Crystal-clear waters, pristine white-sand beaches, and vibrant coral reefs await you. Let us craft your perfect island escape — from honeymoon retreats to family adventures.</p>
+          <div class="hero-ctas">
+            <a href="./packages/index.html" class="btn btn-primary">Explore Packages
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="./contact/index.html" class="btn btn-ghost">Plan My Trip</a>
+          </div>
+        </div>
+        <aside class="hero-aside">
+          <div>
+            <div class="hero-pin">11°N · 92°E</div>
+            <p style="margin-top:6px;">Radhanagar Beach, Havelock Island — voted Asia's best beach by Time magazine. We've been hosting trips here since 2016.</p>
+          </div>
+          <div>
+            <div class="hero-pin">Why us</div>
+            <p style="margin-top:6px;">Born and based in the Andamans. We know every island, every reef, every tide — and we'll plan your trip like it's our own.</p>
+          </div>
+        </aside>
       </div>
-      <div>
-        <div class="hero-pin">Why us</div>
-        <p style="margin-top:6px;">Born and based in the Andamans. We know every island, every reef, every tide — and we'll plan your trip like it's our own.</p>
-      </div>
-    </aside>
-  </div>
-</section>
+    </div>
+  </div><!-- /.sh-reveal -->
+
+</div><!-- /.sh-section -->
 
 <!-- ========= PACKAGES ========= -->
-<section class="section section-surface">
+<section class="section">
   <div class="container">
     <div class="section-head">
       <div>
@@ -156,7 +201,7 @@
 </section>
 
 <!-- ========= DESTINATIONS ========= -->
-<section class="section" style="background: linear-gradient(180deg, transparent, rgba(10,147,150,0.04));">
+<section class="section section-tinted">
   <div class="container">
     <div class="section-head">
       <div>
@@ -302,7 +347,7 @@
 </section>
 
 <!-- ========= BLOGS ========= -->
-<section class="section" style="background: linear-gradient(180deg, transparent, rgba(10,147,150,0.04));">
+<section class="section section-tinted">
   <div class="container">
     <div class="section-head">
       <div>
@@ -389,7 +434,7 @@
 </section>
 
 <!-- ========= CTA ========= -->
-<section class="section">
+<section class="section section-primary">
   <div class="container center">
     <span class="eyebrow" style="justify-content: center; display: inline-flex;">Ready for adventure?</span>
     <h2 class="h-display size-xl" style="margin: var(--s-3) 0;">Let's <span class="accent">plan</span> your Andaman Trip</h2>
@@ -498,5 +543,124 @@
 </a>
 
 <script src="./motion.js" defer></script>
+
+<!-- Scroll-Expansion Hero interaction -->
+<script>
+(function () {
+  'use strict';
+
+  var progress = 0;
+  var expanded = false;
+  var touchY0   = 0;
+  var mobile    = window.innerWidth < 768;
+
+  var elBg     = document.getElementById('shBg');
+  var elMedia  = document.getElementById('shMedia');
+  var elMO     = document.getElementById('shMediaOverlay');
+  var elRow1   = document.getElementById('shRow1');
+  var elRow2   = document.getElementById('shRow2');
+  var elHint   = document.getElementById('shHint');
+  var elReveal = document.getElementById('shReveal');
+
+  /* ---- render all moving parts from progress (0–1) ---- */
+  function render() {
+    var p  = progress;
+    var mw = 300 + p * (mobile ? 650 : 1250);
+    var mh = 400 + p * (mobile ? 200 : 400);
+    var tx = p * (mobile ? 180 : 150);
+    var br = (1 - p) * 16;
+
+    mw = Math.min(mw, window.innerWidth  * 0.95);
+    mh = Math.min(mh, window.innerHeight * 0.85);
+
+    elMedia.style.width        = mw + 'px';
+    elMedia.style.height       = mh + 'px';
+    elMedia.style.borderRadius = br + 'px';
+
+    elMO.style.opacity   = Math.max(0, 0.40 - p * 0.30).toString();
+    elBg.style.opacity   = (1 - p).toString();
+
+    elRow1.style.transform = 'translateX(-' + tx + 'vw)';
+    elRow2.style.transform = 'translateX('  + tx + 'vw)';
+
+    elHint.style.opacity = Math.max(0, 1 - p * 4).toString();
+  }
+
+  /* ---- advance progress by delta ---- */
+  function advance(delta) {
+    progress = Math.min(1, Math.max(0, progress + delta));
+    render();
+
+    if (progress >= 1 && !expanded) {
+      expanded = true;
+      document.body.style.overflow = '';
+      elReveal.classList.add('is-visible');
+    }
+  }
+
+  /* ---- collapse back (user scrolled to top and is scrolling up) ---- */
+  function collapse() {
+    expanded = false;
+    elReveal.classList.remove('is-visible');
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+  }
+
+  /* ---- wheel ---- */
+  function onWheel(e) {
+    if (expanded) {
+      if (e.deltaY < 0 && window.scrollY <= 2) {
+        collapse();
+        e.preventDefault();
+      }
+      return;
+    }
+    e.preventDefault();
+    advance(e.deltaY * 0.0009);
+  }
+
+  /* ---- touch ---- */
+  function onTouchStart(e) {
+    touchY0 = e.touches[0].clientY;
+  }
+  function onTouchMove(e) {
+    if (!touchY0) return;
+    var y     = e.touches[0].clientY;
+    var delta = touchY0 - y;   /* positive = finger moved up = scroll down */
+
+    if (expanded) {
+      if (delta < -20 && window.scrollY <= 2) {
+        collapse();
+        e.preventDefault();
+      }
+      touchY0 = y;
+      return;
+    }
+
+    e.preventDefault();
+    var factor = delta < 0 ? 0.008 : 0.005;
+    advance(delta * factor);
+    touchY0 = y;
+  }
+  function onTouchEnd() { touchY0 = 0; }
+
+  /* ---- resize ---- */
+  window.addEventListener('resize', function () {
+    mobile = window.innerWidth < 768;
+    render();
+  });
+
+  /* ---- attach ---- */
+  window.addEventListener('wheel',      onWheel,      { passive: false });
+  window.addEventListener('touchstart', onTouchStart, { passive: true  });
+  window.addEventListener('touchmove',  onTouchMove,  { passive: false });
+  window.addEventListener('touchend',   onTouchEnd,   { passive: true  });
+
+  /* ---- init ---- */
+  document.body.style.overflow = 'hidden';
+  window.scrollTo(0, 0);
+  render();
+})();
+</script>
 </body>
 </html>
