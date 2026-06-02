@@ -1,4 +1,4 @@
-/* Islands Therapy — motion.js
+/* Ocean Therapy — motion.js
    - Auto-tags common selectors with [data-reveal] so HTML doesn't need editing.
    - Uses IntersectionObserver to add .in-view (CSS handles the transition).
    - Staggers siblings via --reveal-i custom property.
