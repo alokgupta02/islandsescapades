@@ -1512,7 +1512,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Tagline — hidden until user zooms back out after first expansion */
 .sh-tagline {
-  position: absolute;
+  position: initial;
   left: var(--s-5);
   right: var(--s-5);
   bottom: 96px;
