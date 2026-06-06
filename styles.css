@@ -1449,20 +1449,31 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* Expanding media card */
+/* ↓ Tune these two variables to reposition / zoom the hero image */
 .sh-media {
+  --hero-zoom: 2.8;        /* 1 = no extra zoom; 1.15 = 15% zoomed in  */
+  --hero-pos-x: 50%;     /* 0% = left edge, 50% = centre, 100% = right */
+  --hero-pos-y: 62%;     /* 0% = top edge, 50% = centre, 100% = bottom */
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
   box-shadow: 0 0 60px rgba(0,0,0,0.40);
   border-radius: 16px;
   will-change: width, height, border-radius;
 }
-.sh-media > img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center;
+.sh-media picture,
+.sh-media img {
+  width: 100%;
+  height: 100%;
   display: block;
+}
+.sh-media img {
+  object-fit: cover;
+  object-position: var(--hero-pos-x) var(--hero-pos-y);
+  /* transform: scale(var(--hero-zoom)); */
+  transform-origin: var(--hero-pos-x) var(--hero-pos-y);
 }
 .sh-media-overlay {
   position: absolute; inset: 0;
@@ -1495,7 +1506,7 @@ img { display: block; max-width: 100%; height: auto; }
 .sh-title h1 {
   font-family: var(--font-display);
   font-size: clamp(54px, 9.5vw, 120px);
-  line-height: 1.0;
+  /* line-height: 1.0; */
   color: var(--surface);
   margin: 0;
   letter-spacing: -0.01em;
@@ -1506,13 +1517,14 @@ img { display: block; max-width: 100%; height: auto; }
 /* Mobile: tighter font so title fits in the space above the image */
 @media (max-width: 640px) {
   .sh-title { top: var(--s-3); }
-  .sh-title h1 { font-size: 38px; }
+  .sh-title h1 {font-size: 38px;}
   .sh-title .eyebrow { font-size: 10px; letter-spacing: 0.18em; }
 }
 
-/* Tagline — hidden until user zooms back out after first expansion */
+/* Tagline — hidden until user fully expands the hero image */
 .sh-tagline {
   position: initial;
+  padding-top: 380px;
   left: var(--s-5);
   right: var(--s-5);
   bottom: 96px;
@@ -1521,45 +1533,108 @@ img { display: block; max-width: 100%; height: auto; }
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 10px;
+  /* font-size: 176%; */
+  font-weight: bold;
 }
 
-/* Each line starts invisible; .is-shown triggers the stagger */
+/* Top gold rule — draws in just before the first word rises */
+.sh-tagline::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(238,155,0,0.85) 38%,
+    rgba(238,155,0,0.85) 62%,
+    transparent);
+  opacity: 0;
+  margin-bottom: 14px;
+}
+.sh-tagline.is-shown::before {
+  animation: sh-rule-draw 900ms cubic-bezier(.4, 0, .2, 1) forwards;
+}
+
+/* Bottom gold rule — trails in after the last word settles */
+.sh-tagline::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(238,155,0,0.55) 38%,
+    rgba(238,155,0,0.55) 62%,
+    transparent);
+  opacity: 0;
+  margin-top: 14px;
+}
+.sh-tagline.is-shown::after {
+  animation: sh-rule-draw 900ms cubic-bezier(.4, 0, .2, 1) 720ms forwards;
+}
+
+@keyframes sh-rule-draw {
+  0%   { width: 0;     opacity: 0; }
+  18%  { opacity: 1; }
+  100% { width: 96px;  opacity: 0.65; }
+}
+
+/* Each line — parked below and blurred before it rises */
 .sh-tag-line {
   display: block;
   opacity: 0;
-  transform: translateY(10px);
-  font-family: var(--font-body);
-  font-size: clamp(11px, 1.1vw, 14px);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--surface);
-  text-shadow: 0 1px 16px rgba(0,0,0,0.60), 0 1px 4px rgba(0,0,0,0.35);
+  transform: translateY(32px) scale(0.95);
+  filter: blur(10px);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(16px, 1.8vw, 24px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  color: rgba(255,249,244,0.95);
+  text-shadow:
+    0 2px 32px rgba(0,0,0,0.55),
+    0 0 64px rgba(238,155,0,0.16);
   line-height: 1.9;
 }
 
-/* Staggered entrance triggered by JS adding .is-shown */
+/* Staggered luxury entrance */
 .sh-tagline.is-shown .sh-tag-line {
-  animation: sh-tag-in 520ms cubic-bezier(.2,.8,.2,1) forwards;
+  animation: sh-tag-luxury 1100ms cubic-bezier(.16, 1, .3, 1) forwards;
 }
-.sh-tagline.is-shown .sh-tag-line:nth-child(1) { animation-delay:   0ms; }
-.sh-tagline.is-shown .sh-tag-line:nth-child(2) { animation-delay: 110ms; }
-.sh-tagline.is-shown .sh-tag-line:nth-child(3) { animation-delay: 220ms; }
+.sh-tagline.is-shown .sh-tag-line:nth-child(1) { animation-delay: 120ms; }
+.sh-tagline.is-shown .sh-tag-line:nth-child(2) { animation-delay: 320ms; }
+.sh-tagline.is-shown .sh-tag-line:nth-child(3) { animation-delay: 520ms; }
 
-@keyframes sh-tag-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0);    }
+@keyframes sh-tag-luxury {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.95);
+    filter: blur(10px);
+  }
+  40% {
+    opacity: 0.55;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
 }
 
 /* Clear the WhatsApp FAB on small screens */
 @media (max-width: 640px) {
-  .sh-tagline { right: 72px; text-align: left; }
+  .sh-tagline { right: 72px; text-align: left; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sh-tag-line { transition: opacity 200ms ease; }
-  .sh-tagline.is-shown .sh-tag-line { animation: none; opacity: 1; transform: none; }
+  .sh-tag-line { transition: opacity 300ms ease; filter: none; }
+  .sh-tagline.is-shown .sh-tag-line { animation: none; opacity: 1; transform: none; filter: none; }
+  .sh-tagline.is-shown::before,
+  .sh-tagline.is-shown::after { animation: none; opacity: 0.65; width: 96px; }
 }
 
 /* Scroll hint */

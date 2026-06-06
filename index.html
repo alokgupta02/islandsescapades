@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <link rel="icon" type="image/png" href="brand_assets/ai.png">
@@ -45,7 +45,7 @@
   <!-- Background image — fades as media expands -->
   <div class="sh-bg" id="shBg">
     <img
-      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
+      src="resources/images/bg.webp"
       alt=""
       aria-hidden="true"
     />
@@ -57,21 +57,20 @@
 
     <!-- Expanding image card -->
     <div class="sh-media" id="shMedia">
-      <img
-        src="./resources/images/hero.jpg"
-        alt="Andaman Islands — crystal-clear turquoise waters at Radhanagar Beach"
-      />
+      <picture>
+  <source type="image/webp" srcset="resources/images/hero-1920.webp 1920w, resources/images/hero-1280.webp 1280w, resources/images/hero-768.webp 768w, resources/images/hero-480.webp 480w" sizes="100vw" />
+  <img src="resources/images/hero-1920.webp" alt="Andaman Islands — crystal-clear turquoise waters at Radhanagar Beach" width="1920" height="2559" />
+</picture>
       <div class="sh-media-overlay" id="shMediaOverlay"></div>
     </div>
 
     <!-- Title (two rows slide apart as image expands) -->
     <div class="sh-title">
       <div class="sh-title-row" id="shRow1">
-        <span class="eyebrow">Andaman &amp; Nicobar</span>
-        <h1>Discover</h1>
+        <span class="eyebrow">Welcome to A.I.</span>
       </div>
       <div class="sh-title-row" id="shRow2">
-        <h1>the <span class="accent">Untouched Paradise</span></h1>
+        <h1>A.I. means <span class="accent">Andaman Islands</span></h1>
       </div>
     </div>
 
@@ -79,7 +78,7 @@
     <div class="sh-tagline" id="shTagline">
       <span class="sh-tag-line">Crystal Clear Waters.</span>
       <span class="sh-tag-line">Pristine White-Sand Beaches.</span>
-      <span class="sh-tag-line">and an adventure of lifetime.</span>
+      <span class="sh-tag-line">and a memories of lifetime.</span>
     </div>
 
     <!-- Scroll hint -->
@@ -142,7 +141,10 @@
       <a href="./packages/honeymoon-package.html" class="card">
         <div class="card-media">
           <span class="card-tag is-accent">Bestseller</span>
-          <img src="./resources/images/packages/honeymoon.jpg" alt="Honeymoon Andaman beach" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/packages/honeymoon-1200.webp 1200w, resources/images/packages/honeymoon-800.webp 800w, resources/images/packages/honeymoon-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/packages/honeymoon-1200.webp" alt="Honeymoon Andaman beach" width="1200" height="799" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">5 nights · Honeymoon</div>
@@ -161,7 +163,10 @@
       <a href="./packages/family-package.html" class="card">
         <div class="card-media">
           <span class="card-tag">Family</span>
-          <img src="./resources/images/packages/family.jpg" alt="Family at beach" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/packages/family-1200.webp 1200w, resources/images/packages/family-800.webp 800w, resources/images/packages/family-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/packages/family-1200.webp" alt="Family at beach" width="1200" height="820" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">6 nights · Family</div>
@@ -229,7 +234,10 @@
       <a href="./destinations/havelock-island.html" class="card">
         <div class="card-media">
           <span class="card-tag is-accent">Most loved</span>
-          <img src="./resources/images/destinations/havelock.png" alt="Havelock Island beach" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/destinations/havelock-1200.webp 1200w, resources/images/destinations/havelock-800.webp 800w, resources/images/destinations/havelock-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/destinations/havelock-1200.webp" alt="Havelock Island beach" width="1200" height="800" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">Swaraj Dweep</div>
@@ -244,7 +252,10 @@
 
       <a href="./destinations/neil-island.html" class="card">
         <div class="card-media">
-          <img src="./resources/images/destinations/neil.png" alt="Neil Island clear water" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/destinations/neil-800.webp 800w, resources/images/destinations/neil-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/destinations/neil-800.webp" alt="Neil Island clear water" width="800" height="450" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">Shaheed Dweep</div>
@@ -260,7 +271,10 @@
       <a href="./destinations/port-blair.html" class="card">
         <div class="card-media">
           <span class="card-tag">Gateway</span>
-          <img src="./resources/images/destinations/pb.png" alt="Port Blair harbour" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/destinations/pb-1200.webp 1200w, resources/images/destinations/pb-800.webp 800w, resources/images/destinations/pb-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/destinations/pb-1200.webp" alt="Port Blair harbour" width="1200" height="803" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">Capital</div>
@@ -275,7 +289,10 @@
 
       <a href="./destinations/baratang-island.html" class="card">
         <div class="card-media">
-          <img src="./resources/images/destinations/baratang.jpg" alt="Baratang Island mangrove" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/destinations/baratang-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/destinations/baratang-400.webp" alt="Baratang Island mangrove" width="400" height="269" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">Day trip</div>
@@ -291,7 +308,7 @@
     </div><!-- /.carousel -->
 
     <div class="center" style="margin-top: var(--s-5);">
-      <a href="./destinations/index.html" class="btn btn-link">See all destinations →</a>
+      <a href="./destinations/index.html" class="btn btn-link">See all destinations &rarr;’</a>
     </div>
   </div>
 </section>
@@ -311,44 +328,44 @@
       <a href="./activities/index.html" class="activity">
         <!--span class="activity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 7 12 12 17C17 12 17 7 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 17V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span-->
         <span class="activity-icon">
-          <img src="./resources/icons/scuba-diving.png">
+          <img src="resources/icons/scuba-diving.webp">
         </span>
         <div class="activity-text"><div class="activity-name">Scuba Diving</div><div class="activity-price">From ₹3,500</div></div>
       </a>
       <a href="./activities/index.html" class="activity">
           <span class="activity-icon">
-            <img src="./resources/icons/snorkelling.png">
+            <img src="resources/icons/snorkelling.webp">
           </span>
         <div class="activity-text"><div class="activity-name">Snorkelling</div><div class="activity-price">From ₹1,200</div></div>
       </a>
       <a href="./activities/index.html" class="activity">
           <span class="activity-icon">
-            <img src="./resources/icons/sea-walking.png">
+            <img src="resources/icons/sea-walking.webp">
           </span>
         <div class="activity-text"><div class="activity-name">Sea Walking</div><div class="activity-price">From ₹3,000</div></div>
       </a>
       <a href="./activities/index.html" class="activity">
           <span class="activity-icon">
-            <img src="./resources/icons/kayaking.png">
+            <img src="resources/icons/kayaking.webp">
           </span>
         <div class="activity-text"><div class="activity-name">Kayaking</div><div class="activity-price">From ₹1,500</div></div>
       </a>
       <a href="./activities/index.html" class="activity">
         <span class="activity-icon">
-          <img src="./resources/icons/parasailing_2.png">
+          <img src="resources/icons/parasailing_2.webp">
         </span>
         <div class="activity-text"><div class="activity-name">Parasailing</div><div class="activity-price">From ₹2,500</div></div>
       </a>
       <a href="./activities/index.html" class="activity">
         <span class="activity-icon">
-          <img src="./resources/icons/trekking.png">
+          <img src="resources/icons/trekking.webp">
         </span>
         <div class="activity-text"><div class="activity-name">Trekking</div><div class="activity-price">From ₹800</div></div>
       </a>
     </div>
 
     <div class="center" style="margin-top: var(--s-5);">
-      <a href="./activities/index.html" class="btn btn-link">See all activities →</a>
+      <a href="./activities/index.html" class="btn btn-link">See all activities &rarr;’</a>
     </div>
   </div>
 </section>
@@ -374,7 +391,10 @@
       <div class="carousel-track">
       <a href="./blogs/best-places-in-andaman.html" class="card">
         <div class="card-media">
-          <img src="resources/images/blogs/best-places.jpg" alt="Havelock Island beach" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/blogs/best-places-1200.webp 1200w, resources/images/blogs/best-places-800.webp 800w, resources/images/blogs/best-places-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/blogs/best-places-1200.webp" alt="Havelock Island beach" width="1200" height="800" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">Travel guide · January 2026</div>
@@ -389,7 +409,10 @@
 
       <a href="./blogs/budget-travel-tips.html" class="card">
         <div class="card-media">
-          <img src="resources/images/blogs/plan.jpg" alt="Neil Island clear water" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/blogs/plan-1200.webp 1200w, resources/images/blogs/plan-800.webp 800w, resources/images/blogs/plan-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/blogs/plan-1200.webp" alt="Neil Island clear water" width="1200" height="800" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">Budget tips · December 2025</div>
@@ -404,7 +427,10 @@
 
       <a href="./blogs/packing-guide.html" class="card">
         <div class="card-media">
-          <img src="resources/images/blogs/checklist.jpg" alt="Port Blair harbour" />
+          <picture>
+  <source type="image/webp" srcset="resources/images/blogs/checklist-1200.webp 1200w, resources/images/blogs/checklist-800.webp 800w, resources/images/blogs/checklist-400.webp 400w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" />
+  <img src="resources/images/blogs/checklist-1200.webp" alt="Port Blair harbour" width="1200" height="675" loading="lazy" />
+</picture>
         </div>
         <div class="card-body">
           <div class="card-sub">Packing · November 2025</div>
@@ -431,11 +457,27 @@
           </div>
         </div>
       </a>
+
+      <a href="./blogs/international-travel-guide.html" class="card">
+        <div class="card-media">
+          <span class="card-tag is-accent">New</span>
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80" alt="Andaman Islands crystal water for international tourists" width="900" height="394" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <div class="card-sub">International visitors · June 2026</div>
+          <h3 class="card-title">Complete Guide to Andaman for International Tourists</h3>
+          <p class="card-desc">Visas, Restricted Area Permits, flight connections, ATMs, SIM cards — everything to sort before you land.</p>
+          <div class="card-foot">
+            <span class="text-muted" style="font-size:13px;">12 min read</span>
+            <span class="card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
       </div><!-- /.carousel-track -->
     </div><!-- /.carousel -->
 
     <div class="center" style="margin-top: var(--s-5);">
-      <a href="./blogs/index.html" class="btn btn-link">See all blogs →</a>
+      <a href="./blogs/index.html" class="btn btn-link">See all blogs &rarr;’</a>
     </div>
   </div>
 </section>
@@ -491,7 +533,7 @@
         <h4>Get in touch</h4>
         <ul>
           <li><a href="tel:+917067920938">+91 7067 920 938</a></li>
-          <li><a href="mailto:hello@islandstherapy.com">hello@islandstherapy.com</a></li>
+          <li><a href="mailto:itherapytravels@gmail.com">itherapytravels@gmail.com</a></li>
           <li style="margin-top: var(--s-2); opacity: 0.78;">7 MB Market, opp HPO,<br/>Aberdeen Bazaar, Port Blair<br/>Andaman & Nicobar — 744101</li>
           <li style="margin-top: var(--s-2); opacity: 0.78;">Mon–Sat · 9:00 AM – 7:00 PM IST</li>
         </ul>
